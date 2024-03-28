@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+fire = "*"
+uvicorn = "*"
+pydantic = "*"
+sqlalchemy = "*"
+torch = "*"
+openai-whisper = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
