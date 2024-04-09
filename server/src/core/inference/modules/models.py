@@ -1,3 +1,5 @@
+import time
+
 import torch
 import whisper
 
@@ -30,5 +32,7 @@ class InferenceSession:
         return result
 
     def transcribe(self, audio_path):
+        start_time = time.time()
         result = self._model.transcribe(audio_path)
+        print(f"inference took {time.time() - start_time} seconds")
         return result
