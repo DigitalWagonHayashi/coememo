@@ -1,3 +1,4 @@
+import torch
 import whisper
 
 
@@ -15,7 +16,6 @@ class InferenceSession:
         if self._audio is None:
             raise ValueError("No audio loaded")
         audio = whisper.pad_or_trim(self._audio)
-
         # make log-Mel spectrogram and move to the same device as the model
         mel = whisper.log_mel_spectrogram(audio).to(self._model.device)
 
@@ -29,3 +29,6 @@ class InferenceSession:
         # print the recognized text
         return result
 
+    def transcribe(self, audio_path):
+        result = self._model.transcribe(audio_path)
+        return result

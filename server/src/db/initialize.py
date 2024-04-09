@@ -7,7 +7,5 @@ from src.db.common import db_path
 
 
 def initialize():
-    engine = create_engine(f'sqlite://{db_path}')
-    session = sessionmaker(bind=engine)
+    engine = create_engine(f'sqlite:///{db_path}')
     Base.metadata.create_all(engine)
-    return session()

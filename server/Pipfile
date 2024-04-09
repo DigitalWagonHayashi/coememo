@@ -11,6 +11,8 @@ pydantic = "*"
 sqlalchemy = "*"
 torch = "*"
 openai-whisper = "*"
+pathlib = "*"
+python-multipart = "*"
 
 [dev-packages]
 
